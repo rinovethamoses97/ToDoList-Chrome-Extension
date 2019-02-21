@@ -19,7 +19,7 @@ $(document).ready(function(){
     $(document).on('click','.close_icon',function(){
         firebase.database().ref('ToDoList/'+this.id).remove();
         $("div").filter("#"+this.id).css("text-decoration","line-through");
-        $("div").filter("#"+this.id).removeClass("alert-success");
+        $("div").filter("#"+this.id).removeClass("alert-warning");
         $("div").filter("#"+this.id).addClass("alert-danger");
     });
 });
@@ -29,7 +29,7 @@ function loadToDo(){
     ToDoRef.on('child_added', function(data) {
         html+='<div class="row">'
         html+='<div class="col-12">'
-        html+='<div class="alert alert-success" id='+data.key+'>'
+        html+='<div class="alert alert-warning" id='+data.key+'>'
         html+=data.val()+'<span id='+data.key+' class="close_icon">x</span>';
         html+='</div>'
         html+='</div>'
