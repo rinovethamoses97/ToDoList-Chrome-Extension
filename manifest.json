@@ -12,6 +12,11 @@
         "scripts": ["background.js"]
     },
     "content_security_policy": "script-src 'self' https://www.gstatic.com/ https://*.firebaseio.com https://www.googleapis.com; object-src 'self'; connect-src 'self' wss://*.firebaseio.com;",
+    "icons":{
+        "16":"icon.png",
+        "48":"icon.png",
+        "128":"icon.png"
+    },
     "browser_action": {
         "default_title": "ToDoList",
         "default_popup": "index.html"
