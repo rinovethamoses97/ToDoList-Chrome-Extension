@@ -25,8 +25,8 @@ $(document).ready(function(){
 });
 function loadToDo(){
     var ToDoRef = firebase.database().ref('ToDoList/');
-    var html="";
     ToDoRef.on('child_added', function(data) {
+        var html="";
         html+='<div class="row">'
         html+='<div class="col-12">'
         html+='<div class="alert alert-warning" id='+data.key+'>'
@@ -34,7 +34,7 @@ function loadToDo(){
         html+='</div>'
         html+='</div>'
         html+='</div>'
-        $("#todolist").html(html);
+        $("#todolist").append(html);
     });
     
 }
